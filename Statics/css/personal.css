@@ -20,7 +20,6 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url(../image/bg.jpg);
-
     animation: run 60s linear infinite;
     animation-direction: alternate;
 }
@@ -48,7 +47,6 @@ body {
     font-family: 'Saira', 'Noto Sans SC';
     font-weight: normal;
     font-style: normal;
-
 }
 
 .load {
@@ -68,7 +66,6 @@ body {
 .main {
     flex: 1;
 }
-
 
 .div-height {
     height: 50px;
@@ -90,12 +87,12 @@ body {
     bottom: 0;
     height: 30px;
     /*鑴氶儴鐨勯珮搴�*/
+    /* use english commit,or not commit */
     clear: both;
     width: 100%;
 }
 
 .y-row {
-
     display: flex;
     width: auto;
     justify-content: space-between;
@@ -103,7 +100,6 @@ body {
     overflow: scroll;
     overflow-x: auto;
     height: 150px;
-
 }
 
 .bitem {
