@@ -1,33 +1,38 @@
 /**
- * 璁＄畻瀹為檯骞撮緞锛岀簿纭埌澶�
+ * 计算实际年龄，精确到天
+ * Calculate the actual age, accurate to the day
  * @param {*} birthday array [year, month, day]
  * @return array
  */
 function getAge(birthday) {
-    // 鏂板缓鏃ユ湡瀵硅薄
+    // 新建日期对象
+    // Create a new date object
     let date = new Date()
-        // 浠婂ぉ鏃ユ湡锛屾暟缁勶紝鍚� birthday
+        // 今天日期，数组，同 birthday
+        // Today's date, array, same as birthday
     let today = [date.getFullYear(), date.getMonth() + 1, date.getDate()]
-        // 鍒嗗埆璁＄畻骞存湀鏃ュ樊鍊�
+        // 分别计算年月日差值
+        // Calculate the difference between the year, month, and day separately
     let age = today.map((value, index) => {
             return value - birthday[index]
         })
-        // 褰撳ぉ鏁颁负璐熸暟鏃讹紝鏈堝噺 1锛屽ぉ鏁板姞涓婃湀鎬诲ぉ鏁�
+        // 当天数为负数时，月减 1，天数加上月总天数
+        // When the number of days is negative, the month is subtracted by 1, and the number of days is added to the total number of days in the month
     if (age[2] < 0) {
-        // 绠€鍗曡幏鍙栦笂涓湀鎬诲ぉ鏁扮殑鏂规硶锛屼笉浼氶敊
+        // 简单获取上个月总天数的方法，不会错
+        // A simple way to get the total number of days for the previous month without error
         let lastMonth = new Date(today[0], today[1], 0)
         age[1]--
             age[2] += lastMonth.getDate()
     }
-    // 褰撴湀鏁颁负璐熸暟鏃讹紝骞村噺 1锛屾湀鏁板姞涓� 12
+    // 当月数为负数时，年减 1，月数加上 12
+    // When the number of months is negative, the year is subtracted by 1 and the number of months is added to 12
     if (age[1] < 0) {
         age[0]--
             age[1] += 12
     }
     return age
 }
-// console.log(getAge('2006-1-9'.split('-')))
-// document.getElementById("age").innerHTML = getAge('2006-1-9'.split('-'))
 var age_all = getAge('2006-1-9'.split('-'))
 document.getElementById("age").innerHTML = age_all[0]
 console.log("实际准确年龄" + age_all[0] + "年" + age_all[1] + "个月" + age_all[2] + "天")
