@@ -1,0 +1,9 @@
+/* saira-regular - latin */
+
+@font-face {
+    font-family: 'Saira';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''), url('../../front/saira/saira-latin-regular.woff2') format('woff2');
+    font-display: swap;
+}
