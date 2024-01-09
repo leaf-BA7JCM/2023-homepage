@@ -19,8 +19,8 @@
     -moz-background-size: cover;
     background-size: cover;
     background-repeat: no-repeat;
-    /* Deprecated, deprecated writing background-image in css */
-    /* background-image: url("");  */
+    /* try to use css var to set background images */
+    background-image: var(--background-image);
     animation: run 60s linear infinite;
     animation-direction: alternate;
 }
@@ -87,7 +87,6 @@ body {
     position: absolute;
     bottom: 0;
     height: 30px;
-    /*鑴氶儴鐨勯珮搴�*/
     /* use english commit,or not commit */
     clear: both;
     width: 100%;

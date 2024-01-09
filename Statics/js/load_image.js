@@ -17,12 +17,5 @@ toDataURL('./Statics/image/avatar.jpg', function(dataUrl) {
 })
 
 toDataURL('./Statics/image/bg.jpg', function(dataUrl) {
-    var css = `
-      body {
-        background-image: url(${dataUrl});
-      }
-    `;
-    var style = document.createElement('style');
-    style.innerHTML = css;
-    document.head.appendChild(style);
+    document.documentElement.style.setProperty('--background-image', `url(${dataUrl})`);
 })
